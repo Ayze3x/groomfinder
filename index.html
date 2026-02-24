@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>AuraCraft — Hyper-local Grooming Discovery</title>
+  <meta name="description"
+    content="Discover & book the best salons, barbershops and beauty studios within 5 km. Live traffic, waiting times, prepaid priority booking.">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,800;0,900;1,400;1,700&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap"
+    rel="stylesheet">
+  <script>
+    // Apply saved theme immediately to avoid flash
+    (function () {
+      const t = localStorage.getItem('gf_theme') || 'light';
+      if (t === 'dark') document.documentElement.setAttribute('data-theme', 'dark');
+    })();
+  </script>
+  <script src="https://unpkg.com/@phosphor-icons/web@2.1.1"></script>
+  <link rel="stylesheet" href="styles/main.css">
+  <link rel="stylesheet" href="styles/pages.css">
+</head>
+
+<body>
+
+  <!-- Toast Container -->
+  <div id="toast-container" class="toast-container"></div>
+
+  <!-- Page: Landing -->
+  <div id="page-landing" class="page">
+    <div class="landing-bg">
+      <div class="landing-orb orb-1"></div>
+      <div class="landing-orb orb-2"></div>
+      <div class="landing-orb orb-3"></div>
+    </div>
+    <div class="landing-content">
+      <div class="landing-logo"><img src="images/app-logo.png" alt="AuraCraft Logo" class="landing-logo-img">
+      </div>
+      <div class="landing-radius-pill"><i class="ph ph-map-pin-line"></i>Hyper-local · 5 km radius</div>
+      <h1 class="landing-title">
+        Your Next<br>
+        <span class="gradient-text">Great Look</span><br>
+        is 5 km Away
+      </h1>
+      <p class="landing-sub">Discover nearby salons, barbershops & spas. Live traffic, real-time queues, and prepaid
+        priority booking — all in one place.</p>
+      <div class="landing-ctas">
+        <button class="btn btn-primary btn-lg" onclick="navigateTo('/customer-login')">
+          <i class="ph ph-user-circle"></i>Customer Login
+        </button>
+        <button class="btn btn-secondary btn-lg" onclick="navigateTo('/store-login')">
+          <i class="ph ph-store-front"></i>Store Admin
+        </button>
+      </div>
+      <div class="landing-stats">
+        <div class="stat-item">
+          <div class="stat-num">12+</div>
+          <div class="stat-label">Nearby Stores</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-num">5 km</div>
+          <div class="stat-label">Discovery Radius</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-num">Live</div>
+          <div class="stat-label">Queue Tracking</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-num">⚡</div>
+          <div class="stat-label">Prepaid Priority</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Page: Customer Login/Register (rendered by JS) -->
+  <div id="page-customer-login" class="page hidden"></div>
+
+  <!-- Page: Store Login (rendered by JS) -->
+  <div id="page-store-login" class="page hidden"></div>
+
+  <!-- Page: Discovery (rendered by JS) -->
+  <div id="page-discover" class="page hidden"></div>
+
+  <!-- Page: Salon Detail (rendered by JS) -->
+  <div id="page-salon-detail" class="page hidden"></div>
+
+  <!-- Page: Booking (rendered by JS) -->
+  <div id="page-book" class="page hidden"></div>
+
+  <!-- Page: Payment (rendered by JS) -->
+  <div id="page-payment" class="page hidden"></div>
+
+  <!-- Page: My Bookings (rendered by JS) -->
+  <div id="page-my-bookings" class="page hidden"></div>
+
+  <!-- Page: Admin Panel (rendered by JS) -->
+  <div id="page-admin" class="page hidden"></div>
+
+  <!-- Page: Settings (rendered by JS) -->
+  <div id="page-settings" class="page hidden"></div>
+
+  <!--
+    Script loading order (CRITICAL):
+    1. Plain scripts first — they run in global scope, populating window.*
+    2. type=module last — app.js is the ES module entry point that imports
+       auth.js, payment.js, slots.js, location.js, admin.js
+  -->
+  <script src="js/data.js"></script>
+  <script src="js/bookings.js"></script>
+  <script src="js/ui.js"></script>
+  <script src="js/settings.js"></script>
+  <script type="module" src="js/app.js"></script>
+
+  <div id="aura-filter-badge-container" class="aura-filter-badge-container"></div>
+  <!-- Toast notifications container -->
+  <div id="toast-container"
+    style="position:fixed;bottom:24px;right:24px;z-index:9999;display:flex;flex-direction:column-reverse;gap:8px;pointer-events:none;">
+  </div>
+  <style>
+    @keyframes toastIn {
+      from {
+        opacity: 0;
+        transform: translateX(20px);
+      }
+
+      to {
+        opacity: 1;
+        transform: none;
+      }
+    }
+  </style>
+
+</body>
+
+</html>
