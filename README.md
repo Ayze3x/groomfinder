@@ -1,114 +1,93 @@
-GroomFinder 💈
+# GroomFinder ✂️
 
-GroomFinder is a modern salon and grooming service discovery application that helps users easily find nearby barbershops, salons, and grooming centers, view their services, and book appointments. The platform is designed to simplify the process of selecting the best grooming service based on location, availability, and services offered.
+**Hyper-local Grooming Discovery & Priority Booking Platform**
 
-The app acts as a salon discovery and appointment booking platform, similar to a service marketplace, where users can explore grooming businesses, compare services, and schedule appointments conveniently.
+[![Netlify Status](https://api.netlify.com/api/v1/badges/your-site-id/deploy-status)](https://app.netlify.com/sites/your-site-id/deploys)
 
-🚀 Features
+GroomFinder is a modern, responsive web application that helps users discover and book the best salons, barbershops, and beauty studios within a 5 km radius. It features live traffic updates, real-time queue tracking, and prepaid priority booking—all built as a blazing-fast Vanilla JavaScript Single Page Application (SPA).
 
-🔍 Nearby Salon Discovery
-Find barbershops, salons, and grooming centers near your location.
+## 🎥 Preview Video
 
-📋 Service Listings
-View services offered by each salon such as haircuts, beard styling, spa treatments, and grooming packages.
+*(Add your preview video link or embed here)*
+> [Watch the Preview Video Here](./preview-video.mp4) 
 
-⏱ Estimated Wait Time
-See approximate waiting times set by the store admin.
+*(If you have a YouTube/Vimeo link, you can embed it using: `[![GroomFinder Preview](https://img.youtube.com/vi/YOUR_VIDEO_ID/0.jpg)](https://www.youtube.com/watch?v=YOUR_VIDEO_ID)`)*
 
-📅 Appointment Booking
-Book appointments directly from the app.
+---
 
-📱 OTP Authentication
-Secure login using phone number verification with OTP.
+## ✨ Key Features
 
-⭐ Salon Comparison
-Compare multiple salons to choose the best grooming service.
+- **Hyper-local Discovery**: Finds stores specifically within a 5 km radius using location services.
+- **Real-time Queue & Traffic**: View live wait times and store 'traffic' before booking.
+- **Prepaid Priority Booking**: Customers can prepay for services to skip the queue with priority booking slots.
+- **Dual User Roles**: 
+  - **Customer Portal**: For browsing, booking, and managing appointments.
+  - **Store Admin Panel**: For salon owners to manage queue status, inventory, and incoming bookings.
+- **Progressive Web App (PWA)**: Installable on modern mobile devices with offline support via service workers.
+- **Dark/Light Theme**: Native support for customizable system-preferred theming.
 
-⚙️ User Settings
-Manage profile, preferences, and app settings.
+## 🛠️ Tech Stack
 
-🛠 Tech Stack
+GroomFinder is built with an emphasis on zero-dependency performance and simplicity.
 
-The project is built using modern web and cloud technologies.
+- **Frontend**: HTML5, Vanilla JavaScript (ES6+), CSS3 (Custom Properties & Animations)
+- **Architecture**: Custom Client-side SPA (`js/app.js`, `js/ui.js`)
+- **Icons**: [Phosphor Icons](https://phosphoricons.com/)
+- **Hosting / Deployment**: Configured for seamless deployment on [Netlify](https://www.netlify.com/) (`netlify.toml` included).
+- **PWA Capabilities**: Verified Web App Manifest and Service Worker implementation.
 
-Frontend
+## 🚀 Getting Started
 
-React / React Native
+To run the project locally, you don't need any complex build steps. 
 
-HTML
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/yourusername/groomfinder_app.git
+   cd groomfinder_app
+   ```
 
-CSS
+2. **Serve the project:**
+   Since this uses ES modules and service workers, it must be run via a local web server (opening the file directly via `file://` will not work).
+   
+   If you have Python installed:
+   ```bash
+   python -m http.server 8000
+   ```
+   Or using Node.js (`http-server`, `live-server`):
+   ```bash
+   npx live-server
+   ```
 
-JavaScript
+3. **Open in Browser:**
+   Navigate to `http://localhost:8000`
 
-Backend
+## 📁 Repository Structure
 
-Node.js
+```text
+├── index.html          # Main SPA Entry Point
+├── styles/             # Modular CSS Architecture
+│   ├── main.css        # Global variables, typography, utilities
+│   └── pages.css       # Page-level specific styling
+├── js/                 # Vanilla JS application logic
+│   ├── app.js          # Core application state & router
+│   ├── auth.js         # Authentication logic (Customer/Store)
+│   ├── bookings.js     # Booking state & checkout flow
+│   ├── data.js         # Mock data / external data fetching
+│   └── ui.js           # DOM rendering components and page generators
+├── assets/             # Images, icons, and static material
+├── manifest.json       # PWA Configuration metadata
+├── sw.js               # Service Worker for offline capabilities
+└── netlify.toml        # Netlify deployment configurations
+```
 
-Express.js
+## 🌐 Deployment
 
-Database
+This application is ready to be deployed to **Netlify** natively. The included `netlify.toml` automatically handles SPA routing fallbacks and headers.
 
-Firebase / Firestore
+1. Connect your GitHub repository to Netlify.
+2. Ensure the build directory is naturally set to the root (or standard HTML publish directory).
+3. Deploy!
 
-Authentication
+## 📜 License
 
-Firebase Phone OTP Authentication
-
-Hosting / Deployment
-
-Railway
-
-Render
-
-📂 Project Structure
-GroomFinder
-│
-├── frontend        # User interface
-├── backend         # Server-side API
-├── database        # Database configuration
-├── assets          # Images and icons
-└── README.md
-⚙️ Installation
-
-Clone the repository:
-
-git clone https://github.com/yourusername/groomfinder.git
-
-Go into the project directory:
-
-cd groomfinder
-
-Install dependencies:
-
-npm install
-
-Run the project:
-
-npm start
-🔑 Environment Variables
-
-Create a .env file and add the following:
-
-FIREBASE_API_KEY=your_api_key
-FIREBASE_AUTH_DOMAIN=your_auth_domain
-FIREBASE_PROJECT_ID=your_project_id
-📸 Future Improvements
-
-Online payment integration
-
-Real-time appointment tracking
-
-Salon reviews and ratings
-
-AI-based salon recommendations
-
-Push notifications
-
-🤝 Contributing
-
-Contributions are welcome. If you'd like to improve GroomFinder, feel free to fork the repository and submit a pull request.
-
-📄 License
-
-This project is open-source and available under the MIT License.
+This project is licensed under the [MIT License](LICENSE).
