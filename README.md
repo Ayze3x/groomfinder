@@ -2,7 +2,7 @@
 
 **Hyper-local Grooming Discovery & Priority Booking Platform**
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/your-site-id/deploy-status)](https://app.netlify.com/sites/your-site-id/deploys)
+[![Netlify Status](https://auracrafttt.netlify.app/)](https://app.netlify.com/sites/your-site-id/deploys)
 
 GroomFinder is a modern, responsive web application that helps users discover and book the best salons, barbershops, and beauty studios within a 5 km radius. It features live traffic updates, real-time queue tracking, and prepaid priority booking—all built as a blazing-fast Vanilla JavaScript Single Page Application (SPA).
 
