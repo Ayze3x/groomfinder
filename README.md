@@ -8,10 +8,8 @@ GroomFinder is a modern, responsive web application that helps users discover an
 
 ## 🎥 Preview Video
 
-*(Add your preview video link or embed here)*
-> [Watch the Preview Video Here](./preview-video.mp4) 
 
-*(If you have a YouTube/Vimeo link, you can embed it using: `[![GroomFinder Preview](https://img.youtube.com/vi/YOUR_VIDEO_ID/0.jpg)](https://www.youtube.com/watch?v=YOUR_VIDEO_ID)`)*
+https://github.com/user-attachments/assets/bd362a56-c55b-4221-84c0-5255fd7a8135
 
 ---
 
